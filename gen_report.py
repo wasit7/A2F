@@ -138,14 +138,14 @@ if __name__ == "__main__":
             final_boundary.append(T2Weight(boundary[i],mu,sigma))
     
     for i in xrange(len(boundary)-1):
-        text_Tboundary.append("%.3f < %-2s <= %.3f"%(boundary[i],gtext[i+1],boundary[i+1]))
-        text_boundary.append("%.3f < %-2s <= %.3f"%(final_boundary[i],gtext[i+1],final_boundary[i+1]))
+        text_Tboundary.append("%.3f <= %-2s < %.3f"%(boundary[i],gtext[i+1],boundary[i+1]))
+        text_boundary.append("%.3f <= %-2s < %.3f"%(final_boundary[i],gtext[i+1],final_boundary[i+1]))
     
-    text_Tboundary.insert(0,"%06.3f < %-2s <= %.3f"%(0.0,gtext[0],boundary[0]))
-    text_Tboundary.append("%.3f < %-2s <= %.3f"%(boundary[-1],gtext[-1],100.0))
+    text_Tboundary.insert(0,"%06.3f <= %-2s < %.3f"%(0.0,gtext[0],boundary[0]))
+    text_Tboundary.append("%.3f <= %-2s < %.3f"%(boundary[-1],gtext[-1],100.0))
     
-    text_boundary.insert(0,"%06.3f < %-2s <= %.3f"%(0.0,gtext[0],final_boundary[0]))
-    text_boundary.append("%.3f < %-2s <= %.3f"%(final_boundary[-1],gtext[-1],100.0))
+    text_boundary.insert(0,"%06.3f <= %-2s < %.3f"%(0.0,gtext[0],final_boundary[0]))
+    text_boundary.append("%.3f <= %-2s < %.3f"%(final_boundary[-1],gtext[-1],100.0))
     
     dict_grade={'Grade':gtext,'ScoreBoundary':text_boundary,'TScoreBoundary':text_Tboundary}
     df_grade= pd.DataFrame(dict_grade)
